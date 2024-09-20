@@ -3,6 +3,7 @@ package dsa.Arrays;
 import java.util.Arrays;
 
 public class QuickSort {
+    //Sort Colors Problem Q.75 leetcode
     public static int partition(int array[], int low, int high)
     {
         int pivot = array[high];
