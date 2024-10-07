@@ -100,7 +100,7 @@ public class Peak2DII {
 
 
 
-    public static void main(String[] args) {d
+    public static void main(String[] args) {
             int matrix[][]=new int[][]{ {70,50,40,30,20},{100,1,2,3,4}};
             System.out.println(Arrays.toString(findPeakGrid(matrix)));
         }
