@@ -7,7 +7,7 @@ public class LinkedList {
     public LinkedList() {
         this.size=0;
     }
-    private class Node{
+    public class Node{
         private int value;
         Node next;
         public Node(int value){
@@ -18,6 +18,13 @@ public class LinkedList {
             this.value=value;
             this.next=next;
         }
+    }
+    public Node getHead(){
+        Node temp=head;
+        return temp;
+    }
+    public void setHead(Node temp){
+        this.head=temp;
     }
     public void insertFirst(int data) {
         Node node=new Node(data);
@@ -46,6 +53,11 @@ public class LinkedList {
         size+=1;
     }
     public void insertLast(int data) {
+        if(tail==null)
+        {
+            insertFirst(data);
+            return;
+        }
         Node node=new Node(data);
         tail.next=node;
         tail=node;
