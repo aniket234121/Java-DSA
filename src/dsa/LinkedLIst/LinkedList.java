@@ -18,6 +18,10 @@ public class LinkedList {
             this.value=value;
             this.next=next;
         }
+        public int getValue()
+        {
+            return this.value;
+        }
     }
     public Node getHead(){
         Node temp=head;
