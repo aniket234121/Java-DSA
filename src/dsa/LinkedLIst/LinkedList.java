@@ -22,6 +22,9 @@ public class LinkedList {
         {
             return this.value;
         }
+        public void setValue(int value){
+            this.value=value;
+        }
     }
     public Node getHead(){
         Node temp=head;
