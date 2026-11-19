@@ -13,7 +13,7 @@
 | 3 | [**Complement Lookup**](./Hashing/ComplementLookup.md)               | Two Sum, pair with target sum, pair with difference, complement search | 
 | 4 | [**Grouping by Frequency or Key**](./Hashing/GroupingByFrequency.md) | Group Anagrams, group elements by frequency, frequency-based grouping | 
 | 5 | [**Index Mapping (HashMap)**](./Hashing/IndexMapping.md)             | First/last occurrence, element-to-index mapping, longest consecutive sequence | 
-| 6 | **Prefix Sum + HashMap**                                             | Subarray sum equals K, zero-sum subarray, longest subarray with sum K | 
+| 6 | [**Prefix Sum + HashMap**](./Hashing/PrefixSum.md)                   | Subarray sum equals K, zero-sum subarray, longest subarray with sum K | 
 | 7 | **Counting Pairs and Subarrays**                                     | Count pairs with given sum, count pairs with difference K, count subarrays with sum K | 
 | 8 | **Sliding Window + HashMap**                                         | Distinct elements in window, at most K distinct, frequency tracking in windows | 
 | 9 | **Array Comparison Using Hashing**                                   | Anagram check, array equality, permutation check, intersection | 
