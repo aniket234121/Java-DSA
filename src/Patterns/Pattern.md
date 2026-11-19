@@ -11,60 +11,13 @@
 | 1 | [**HashMap Frequency Counting**](./Hashing/HashMapFrequencyCount.md) | Element frequency, most/least frequent, first repeating, first non-repeating | 
 | 2 | [**HashSet Lookup**](./Hashing/HashSetLookup.md)                     | Duplicate detection, missing elements, unique elements, intersection, union | 
 | 3 | [**Complement Lookup**](./Hashing/ComplementLookup.md)               | Two Sum, pair with target sum, pair with difference, complement search | 
-| 4 | **Grouping by Frequency or Key**                                     | Group Anagrams, group elements by frequency, frequency-based grouping | 
-| 5 | **Index Mapping (HashMap)**                                          | First/last occurrence, element-to-index mapping, longest consecutive sequence | 
+| 4 | [**Grouping by Frequency or Key**](./Hashing/GroupingByFrequency.md) | Group Anagrams, group elements by frequency, frequency-based grouping | 
+| 5 | [**Index Mapping (HashMap)**](./Hashing/IndexMapping.md)             | First/last occurrence, element-to-index mapping, longest consecutive sequence | 
 | 6 | **Prefix Sum + HashMap**                                             | Subarray sum equals K, zero-sum subarray, longest subarray with sum K | 
 | 7 | **Counting Pairs and Subarrays**                                     | Count pairs with given sum, count pairs with difference K, count subarrays with sum K | 
 | 8 | **Sliding Window + HashMap**                                         | Distinct elements in window, at most K distinct, frequency tracking in windows | 
 | 9 | **Array Comparison Using Hashing**                                   | Anagram check, array equality, permutation check, intersection | 
 
-
-
-
-## 5. Index Mapping (HashMap) — ⭐⭐⭐⭐ IMPORTANT
-
-| LeetCode | Problem | Difficulty | Variation to Master |
-|---:|---|:---:|---|
-| 1 | Two Sum | E | Store element → index |
-| 205 | Isomorphic Strings | E | Character → character mapping |
-| 290 | Word Pattern | E | One-to-one mapping |
-| 599 | Minimum Index Sum of Two Lists | E | Store element → index |
-| 219 | Contains Duplicate II | E | Track previous occurrence |
-| 36 | Valid Sudoku | M | Track values by row, column and box |
-| 128 | Longest Consecutive Sequence | M | Track unique values and sequence boundaries |
-
-**Mastery target:**
-- Store element → index.
-- Find first occurrence.
-- Find last occurrence.
-- Track previous occurrence.
-- Perform one-to-one mapping.
-
----
-
-## 6. Prefix Sum + HashMap — ⭐⭐⭐⭐⭐ MUST MASTER
-
-| LeetCode | Problem | Difficulty | Variation to Master |
-|---:|---|:---:|---|
-| 303 | Range Sum Query – Immutable | E | Basic prefix sum |
-| 724 | Find Pivot Index | E | Left sum = right sum |
-| 523 | Continuous Subarray Sum | M | Divisibility using prefix remainder |
-| 525 | Contiguous Array | M | Equal number of 0s and 1s |
-| 560 | Subarray Sum Equals K | M | Count subarrays with target sum |
-| 974 | Subarray Sums Divisible by K | M | Prefix remainder frequency |
-| 930 | Binary Subarrays With Sum | M | Count binary subarrays with target sum |
-| 1248 | Count Number of Nice Subarrays | M | Transform odd-number count into prefix counting |
-| 1546 | Maximum Number of Non-Overlapping Subarrays With Sum Equals Target | M | Prefix sum + greedy |
-
-**Mastery target:**
-
-Understand these three approaches:
-
-1. Prefix Sum + HashMap storing frequency.
-2. Prefix Sum + HashMap storing earliest index.
-3. Prefix Sum + remainder frequency.
-
----
 
 ## 7. Counting Pairs and Subarrays — ⭐⭐⭐⭐⭐ MUST MASTER
 
