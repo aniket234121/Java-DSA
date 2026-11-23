@@ -18,6 +18,20 @@ Formula 2: Calculating Subarray Sum
 For a subarray from index L to index R:
 
     [boxed{sum(L,R)=prefix[R]-prefix[L-1]}]
+
+## **Prefix Sum – Most Important Variations**
+
+| # | Variation             | What to Maintain      | Common Application              |
+| - | --------------------- | --------------------- | ------------------------------- |
+| 1 | Normal Prefix Sum     | Actual cumulative sum | Subarray sum = K                |
+| 2 | Modulo Prefix Sum     | `prefixSum % K`       | Subarray sum divisible by K     |
+| 3 | Odd Count Prefix Sum  | Cumulative odd count  | Exactly K odd numbers           |
+| 4 | Parity Prefix Sum     | `prefixSum % 2`       | Even/odd subarray sum           |
+| 5 | Binary Transformation | `0 → -1`, `1 → +1`    | Equal 0s and 1s                 |
+| 6 | Frequency Difference  | `A → +1`, `B → -1`    | Equal frequency of two elements |
+| 7 | XOR Prefix            | Cumulative XOR        | Subarray XOR = K                |
+
+
 ## Prefix Sum + HashMap 
 
 | LeetCode | Problem | Difficulty | Variation to Master |

@@ -45,6 +45,17 @@ for (int i = k; i < arr.length; i++) {
     maxSum = Math.max(maxSum, windowSum);
 }
 ```
+| # | LeetCode | Problem | Difficulty | Variation to Master |
+|---:|---|---|:---:|---|
+| 1 | [643](https://leetcode.com/problems/maximum-average-subarray-i/) | Maximum Average Subarray I | E | Window sum |
+| 2 | [1343](https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/) | Number of Sub-arrays of Size K and Average ≥ Threshold | M | Counting valid windows |
+| 3 | [1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | Maximum Number of Vowels in a Substring of Given Length | M | Character counting |
+| 4 | [567](https://leetcode.com/problems/permutation-in-string/) | Permutation in String | M | Frequency matching |
+| 5 | [438](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | Find All Anagrams in a String | M | Frequency matching + indices |
+| 6 | [1052](https://leetcode.com/problems/grumpy-bookstore-owner/) | Grumpy Bookstore Owner | M | Fixed window optimization |
+| 7 | [2461](https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/) | Maximum Sum of Distinct Subarrays With Length K | M | Window sum + HashMap |
+| 8 | [1423](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/) | Maximum Points You Can Obtain from Cards | M | Complementary window |
+
 ## 1. Understand the problem
 
 Suppose we have this array:
@@ -285,3 +296,68 @@ while (j < n) {
 | Longest/Shortest subarray | based on sum, chars | Subarray with sum ≤ K                         |
 | Count of subarrays        | with constraint     | At most K distinct characters                 |
 | Frequency                 | unique chars/count  | Longest substring with at most K unique chars |
+
+| # | LeetCode | Problem | Difficulty | Variation to Master |
+|---:|---|---|:---:|---|
+| 1 | [209](https://leetcode.com/problems/minimum-size-subarray-sum/) | Minimum Size Subarray Sum | M | Minimum window with sum ≥ target |
+| 2 | [3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Longest Substring Without Repeating Characters | M | Longest window with unique elements |
+| 3 | [424](https://leetcode.com/problems/longest-repeating-character-replacement/) | Longest Repeating Character Replacement | M | At most K replacements |
+| 4 | [1004](https://leetcode.com/problems/max-consecutive-ones-iii/) | Max Consecutive Ones III | M | At most K zeros |
+| 5 | [1493](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | Longest Subarray of 1's After Deleting One Element | M | At most one deletion |
+| 6 | [904](https://leetcode.com/problems/fruit-into-baskets/) | Fruit Into Baskets | M | At most K distinct elements |
+| 7 | [930](https://leetcode.com/problems/binary-subarrays-with-sum/) | Binary Subarrays With Sum | M | Exactly K using atMost |
+| 8 | [1248](https://leetcode.com/problems/count-number-of-nice-subarrays/) | Count Number of Nice Subarrays | M | Exactly K odd numbers |
+| 9 | [713](https://leetcode.com/problems/subarray-product-less-than-k/) | Subarray Product Less Than K | M | Product-based window |
+| 10 | [76](https://leetcode.com/problems/minimum-window-substring/) | Minimum Window Substring | H | Minimum window + frequency map |
+| 11 | [992](https://leetcode.com/problems/subarrays-with-k-different-integers/) | Subarrays with K Different Integers | H | Exactly K distinct elements |
+| 12 | [239](https://leetcode.com/problems/sliding-window-maximum/) | Sliding Window Maximum | H | Monotonic Deque |
+
+### At Most K Sliding Window Pattern
+#### 1. What is At Most K?
+
+At Most K means finding or counting subarrays where a particular condition occurs at most K times.
+
+At most K includes values from 0 to K.
+
+For example, At Most 2 distinct elements means a subarray can contain:
+- 0 distinct elements
+- 1 distinct element
+- 2 distinct elements
+  But not more than 2.
+
+```java 
+int i = 0;
+int count = 0;
+
+for (int j = 0; j < nums.length; j++) {
+
+    // Add nums[j] to the window
+
+    while (/* condition exceeds k */) {
+
+        // Remove nums[i] from the window
+        i++;
+    }
+
+    // Count all valid subarrays ending at j
+    count += j - i + 1;
+}
+```
+
+### Why j - i + 1?
+
+When the current window [i...j] is valid, all subarrays ending at j and starting between i and j are also valid.
+
+Therefore, the number of valid subarrays ending at j is:
+**[ j - i + 1 ]**
+
+#### 3. Exactly K Using At Most K
+   A useful mathematical relationship:
+   \[
+   \boxed{Exactly(K) = AtMost(K) - AtMost(K-1)}
+   \]
+
+Why?
+- AtMost(K) counts subarrays with 0, 1, 2, ..., K occurrences.
+- AtMost(K-1) counts subarrays with 0, 1, 2, ..., K-1 occurrences.
+- Subtracting them leaves only subarrays with exactly K occurrences.

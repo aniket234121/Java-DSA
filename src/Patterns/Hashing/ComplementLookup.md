@@ -56,3 +56,106 @@ We found the pair (2, 7).
 - Count multiple valid pairs.
 - Understand complement-based lookup.
 ---
+
+### 1. Two Sum — LeetCode 1
+*    Easy 
+*    Basic Complement Lookup
+
+#### Problem
+**Given an integer array nums and an integer target, return the indices of two numbers whose sum equals the target.**
+
+Each input has exactly one solution, and you cannot use the same element twice.
+
+Example:
+
+    nums = [2, 7, 11, 15]
+    target = 9
+
+Output:
+
+    [0, 1]
+
+
+Because:
+
+    nums[0] + nums[1] = 2 + 7 = 9
+
+
+#### A. Identify the pattern
+We need two numbers whose sum equals the target.
+
+Mathematically:
+**\[
+a + b = target
+\]**
+
+Rearrange the equation:
+**\[
+b = target - a
+\]**
+
+This is the most important step.
+
+For every current number a, we calculate the number b that we need.
+
+That required number is called the complement.
+complement = target - currentNumber;
+
+
+Instead of searching for a pair using nested loops, we check whether the complement has already appeared.
+#### B. Brute Force Approach
+Use two loops to check every possible pair.
+```java
+class Solution {
+public int[] twoSum(int[] nums, int target) {
+
+        for (int i = 0; i < nums.length; i++) {
+
+            for (int j = i + 1; j < nums.length; j++) {
+
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+
+        return new int[]{};
+    }
+}
+
+
+```
+Complexity:
+- Time: \(O(n^2)\)
+- Space: \(O(1)\)
+  The problem is that we repeatedly search for pairs.
+  C. Optimized Approach — HashMap
+  Core idea: Store previously visited numbers and their indices in a HashMap.
+
+For every element:
+1. Calculate its complement.
+2. Check whether the complement exists in the HashMap.
+3. If it exists, we have found our answer.
+4. Otherwise, store the current number and its index.
+   Complete Java Solution
+  ```java
+ class Solution {
+    public int[] twoSum(int[] nums, int target) {
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            int complement = target - nums[i];
+
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), i};
+            }
+
+            map.put(nums[i], i);
+        }
+
+        return new int[]{};
+    }
+} 
+```
